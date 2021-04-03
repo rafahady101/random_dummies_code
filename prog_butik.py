@@ -23,3 +23,12 @@ while True:
         break
     else:
         print("Inputan anda salah, opsi yang tersedia adalah (1/2/3/4)")
+bayar = int(input("Masukkan uang anda: "))
+if bayar == total:
+    print("Uang anda sudah pas, Terima kasih sudah belanja!")
+elif bayar > total:
+    kembalian = bayar - total
+    print("Kembalian anda sebesar",kembalian,"Terima kasih sudah belanja!")
+elif bayar < total:
+    kurang = total - bayar
+    print("Mohon maaf uang anda kurang sebesar",kurang)
