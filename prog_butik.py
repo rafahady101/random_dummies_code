@@ -9,16 +9,16 @@ jas = 100000
 total = 0
 while True:
     beli = str(input("Masukkan barang yang ingin dibeli (1/2/3/4): "))
-    if beli == "1" or beli == "kaos" or beli == "Kaos":
+    if beli == "1" or beli.upper() == "kaos".upper():
         print("Kaos polos ditambahkan")
         total += kaos
-    elif beli == "2" or beli == "kemeja" or beli == "Kemeja":
+    elif beli == "2" or beli.upper() == "kemeja".upper():
         print("Kemeja ditambahkan")
         total += kemeja
-    elif beli == "3" or beli == "jas" or beli == "Jas":
+    elif beli == "3" or beli.upper() == "jas".upper():
         print("Jas ditambahkan")
         total += jas
-    elif beli == "4" or beli == "selesai" or beli == "Selesai" :
+    elif beli == "4" or beli.upper() == "selesai".upper():
         if total == 0:
             break
         print("\nTotal yang harus dibayar:",total)
@@ -34,4 +34,4 @@ if total != 0:
        print("Kembalian anda sebesar",kembalian,"Terima kasih sudah belanja!")
     elif bayar < total:
        kurang = total - bayar
-       print("Mohon maaf uang anda kurang sebesar",kurang)
+       print("Mohon maaf uang anda kurang sebesar Rp",kurang)
