@@ -19,21 +19,24 @@ while True:
     def cancounter(x):
         candidates[x-1][1] += 1
 
-    menu = int(input("Choose menu (1/2/0): "))
+    menu = int(input("Choose menu (1/2/3/4/0): "))
 
     if menu == 1:
         count += 1
         name = str(input("input your name: "))
-        print()
-        print("=== THE CANDIDATES ===")
-        print(" 1. Berlin\n","2. Paris\n","3. Nairobi\n","4. Helshinki\n","5. Palermo")
+        if name.title() in data:
+            print("You've already voted\n")
+        else: 
+            print()
+            print("=== THE CANDIDATES ===")
+            print(" 1. Berlin\n","2. Paris\n","3. Nairobi\n","4. Helshinki\n","5. Palermo")
 
-        choose_vote = int(input("Choose your candidates (1/2/3/4/5): "))
-        if 0 < choose_vote <= 5:
-            cancounter(choose_vote)
-            voting(name.title(),choose_vote)
-        else:
-            print("No option!\n")
+            choose_vote = int(input("Choose your candidates (1/2/3/4/5): "))
+            if 0 < choose_vote <= 5:
+                cancounter(choose_vote)
+                voting(name.title(),choose_vote)
+            else:
+                print("No option!\n")
         
     elif menu == 2:
         if count == 0:
@@ -56,15 +59,14 @@ while True:
             print("Data is empty\n")
         elif count > 0:
             name = str(input("Input your name: "))
-            if name.capitalize() in data:
+            if name.title() in data:
                 print()
                 print("=== THE CANDIDATES ===")
                 print(" 1. Berlin\n","2. Paris\n","3. Nairobi\n","4. Helshinki\n","5. Palermo")
-                print(data)
-                data[name.capitalize()][1] -= 1
+                data[name.title()][1] -= 1
                 choose_vote = int(input("Choose your candidates (1/2/3/4/5): "))
                 cancounter(choose_vote)
-                voting(name.capitalize(),choose_vote)
+                voting(name.title(),choose_vote)
             elif name not in data:
                 print("You haven't voted yet\n")
 
