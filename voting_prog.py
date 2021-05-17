@@ -49,7 +49,7 @@ while True:
                 num = 0
                 for key,value in data.items():
                     num += 1
-                    print(num,".",key,"votes",value[0])
+                    print(f"{num}. {key} votes {value[0]}")
                 print()
             else:
                 print("Your token is not correct!\n")
