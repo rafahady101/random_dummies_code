@@ -5,8 +5,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
 # Make sure you've already had selenium modules
+
 driver = webdriver.Firefox(executable_path="C:\Windows\driver\geckodriver.exe")
-# Executable path depends on your geckodriver or chormedriver location
+# Executable path depends on your geckodriver or chromedriver location
+
 driver.get("https://10fastfingers.com/advanced-typing-test/english")
 
 delay = 10
@@ -24,3 +26,5 @@ for word in words:
 	driver.find_element_by_id("inputfield").send_keys(word+" ")
 
 	sleep(0.15)
+	
+# This program will return an average of 409 WPM
